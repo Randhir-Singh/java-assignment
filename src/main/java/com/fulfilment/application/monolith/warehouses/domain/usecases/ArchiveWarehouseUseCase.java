@@ -1,9 +1,13 @@
 package com.fulfilment.application.monolith.warehouses.domain.usecases;
 
+import java.time.LocalDateTime;
+
 import com.fulfilment.application.monolith.warehouses.domain.models.Warehouse;
 import com.fulfilment.application.monolith.warehouses.domain.ports.ArchiveWarehouseOperation;
 import com.fulfilment.application.monolith.warehouses.domain.ports.WarehouseStore;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.transaction.Transactional;
+
 
 @ApplicationScoped
 public class ArchiveWarehouseUseCase implements ArchiveWarehouseOperation {
@@ -15,9 +19,13 @@ public class ArchiveWarehouseUseCase implements ArchiveWarehouseOperation {
   }
 
   @Override
+  @Transactional
   public void archive(Warehouse warehouse) {
-    // TODO implement this method
 
+    if (warehouse == null) {
+      throw new IllegalArgumentException("Warehouse cannot be null");
+    }
+    warehouse.archivedAt = LocalDateTime.now();
     warehouseStore.update(warehouse);
   }
 }

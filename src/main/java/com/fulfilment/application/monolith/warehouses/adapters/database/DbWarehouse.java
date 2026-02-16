@@ -1,12 +1,13 @@
 package com.fulfilment.application.monolith.warehouses.adapters.database;
 
+import java.time.LocalDateTime;
+
 import com.fulfilment.application.monolith.warehouses.domain.models.Warehouse;
 import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "warehouse")

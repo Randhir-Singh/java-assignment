@@ -1,0 +1,22 @@
+# GitHub Actions Configuration
+# This file contains metadata and configuration for GitHub Actions
+
+# Runner labels (if using self-hosted runners)
+# labels:
+#   - self-hosted
+#   - linux
+#   - x64
+
+# Environment variables available to all workflows
+env:
+  MAVEN_OPTS: "-Dhttps.protocols=TLSv1.2 -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true"
+  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+
+# Timeout settings
+timeout-minutes: 30
+
+# Concurrency settings to cancel previous runs
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

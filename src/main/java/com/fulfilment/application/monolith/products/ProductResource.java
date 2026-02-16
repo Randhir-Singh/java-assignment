@@ -1,5 +1,9 @@
 package com.fulfilment.application.monolith.products;
 
+import java.util.List;
+
+import org.jboss.logging.Logger;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.quarkus.panache.common.Sort;
@@ -17,8 +21,6 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
-import java.util.List;
-import org.jboss.logging.Logger;
 
 @Path("product")
 @ApplicationScoped

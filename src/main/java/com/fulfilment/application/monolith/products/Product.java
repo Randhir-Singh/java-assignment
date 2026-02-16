@@ -1,11 +1,12 @@
 package com.fulfilment.application.monolith.products;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Cacheable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import java.math.BigDecimal;
 
 @Entity
 @Cacheable
