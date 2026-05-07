@@ -7,11 +7,11 @@ public class Location {
   public int maxNumberOfWarehouses;
 
   // maximum capacity of the location summing all the warehouse capacities
-  public int maxCapacityMerge;
+  public int maxCapacityMergeMain;
 
   public Location(String identification, int maxNumberOfWarehouses, int maxCapacity) {
     this.identification = identification;
     this.maxNumberOfWarehouses = maxNumberOfWarehouses;
-    this.maxCapacityMerge = maxCapacity;
+    this.maxCapacityMergeMain = maxCapacity;
   }
 }

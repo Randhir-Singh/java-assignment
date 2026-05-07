@@ -16,4 +16,6 @@ public class Warehouse {
   public LocalDateTime createdAt;
 
   public LocalDateTime archivedAtTimeMergeConflictWithMain;
+
+  public String companyId;
 }
